@@ -1,0 +1,14 @@
+[
+  {
+    "img": "https://www.lidl-shop.nl/media/fcf868f9526b38d0b0a43cc2ace72b80.jpeg",
+    "name": "Sofa",
+    "price": "259",
+    "decFactor": "0.4"
+  },
+  {
+    "img": "https://www.stylespafurniture.com/wp-content/uploads/2020/03/Cove_3_Door_Wardrobe_1.jpg",
+    "name": "Wardrobe",
+    "price": "120",
+    "decFactor": "1.2"
+  }
+]
