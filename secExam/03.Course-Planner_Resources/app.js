@@ -112,28 +112,17 @@ function attachEvents() {
   }
 
   function editHandler() {
-    elId = this.parentNode.id;
-    elParent = this.parentNode;
+    const elId = this.parentNode.id;
+    const elParent = this.parentNode;
+    const children = Array.from(elParent.children);
     elParent.remove();
-
-    fetch(`${BASE_URL}${elId}`)
-      .then((response) => response.json())
-      .then((data) => {
-        let dataValues = Object.values(data);
-        console.log(dataValues);
-        let [title, type, description, teacher, _id] = dataValues;
-        inputDOMSelectors.title.value = title;
-        inputDOMSelectors.type.value = type;
-        inputDOMSelectors.description.value = description;
-        inputDOMSelectors.teacher.value = teacher;
-        addBtn.setAttribute("disabled", true);
-        editBtn.removeAttribute("disabled");
-        editBtn.className = _id;
-      })
-
-      .catch((error) => {
-        console.error(error);
-      });
+    inputDOMSelectors.title.value = children[0].textContent;
+    inputDOMSelectors.type.value = children[2].textContent;
+    inputDOMSelectors.description.value = children[3].textContent;
+    inputDOMSelectors.teacher.value = children[1].textContent;
+    addBtn.setAttribute("disabled", true);
+    editBtn.removeAttribute("disabled");
+    editBtn.className = elId;
   }
 
   function finishHandler() {
